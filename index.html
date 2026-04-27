@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Vytalis</title>
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Logo" width="125" height="65">
+    <nav class="links">
+        <a href="#seccion-lema" class="nav-link active">Inicio</a>
+        <a href="#seccion-servicios" class="nav-link">Servicios</a>
+        <a href="#seccion-ubicacion" class="nav-link">Ubícanos</a>
+        <a href="#seccion-informacion" class="nav-link">Información</a>
+        <span class="underline"></span> <!-- línea que se moverá -->
+    </nav>
+    <a id="whatsapp" href="https://wa.me/943337787" target="_blank"><img src="whatsapp.png" alt="whatsapp">whatsapp</a>
+
+</header>
+
+    <section class="lema" id="seccion-lema">
+        <h1 id="lema-blanco">Belleza Natural</h1>
+        <h1 id="lema-blanco">con Tecnologia Avanzada</h1>
+        <p id="lema-letritas">Resultados visibles, cuidado profesional<br>
+        y tratamientos estéticos de última generación<br>
+        para rostro y cuerpo.</p>
+    </section>
+
+    <section class="servicios" id="seccion-servicios">
+        <h6 id="servicio-titulo">Nuestros servicios</h6>
+        <div id="cards">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-img-bg"><img src="faciales.png" alt="Facial"></div>
+                    <h3 class="cards-titulos"> Tratamientos faciales</h3>
+                    <button class="expand-btn">▼</button>
+                </div>
+                <div class="card-content">
+                    <div class="subcards">
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🌿 Limpieza Facial Profunda</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Profunda limpieza de poros y control de impurezas</strong><br>
+                                Tratamiento de limpieza integral que elimina impurezas, puntos negros, comedones y exceso de sebo acumulado en los poros. Incluye desmaquillante, exfoliación suave, extracción profesional y masaje relajante.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 50-70 minutos</p>
+                                <br>
+                                <p><strong>Ideal para:</strong> pieles mixtas, grasas y propensas a acné. Recomendado cada 2-3 semanas.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> reducción de brotes, poros visiblemente más limpios y refinados, textura mejorada, mayor claridad y luminosidad.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💧 Hidrafacial Premium</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Hidratación profunda y renovación celular intensiva</strong><br>
+                                Tratamiento revolucionario no invasivo que combina vortex-fusion, limpieza, exfoliación mecánica e infusión de sueros concentrados con ácido hialurónico, vitaminas y antioxidantes para una piel más luminosa y rejuvenecida.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-90 minutos</p>
+                                <br>
+                                <p><strong>Procedimiento:</strong> tecnología patentada que succiona suavemente mientras infunde activos. Sin dolor ni irritación.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> piel profundamente hidratada, reducción de líneas finas, tono más uniforme, luminosidad inmediata. Resultados progresivos con sesiones mensuales.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>✨ Facial Antiacné</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Control integral y tratamiento del acné activo</strong><br>
+                                Protocolos médicos y cosméticos especializados que reducen inflamación, controlan la producción de sebo, eliminan bacterias causantes del acné y previenen cicatrices. Incluye limpieza especializada, mascarillas desinflamantes y tratamientos tópicos profesionales.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-70 minutos</p>
+                                <br>
+                                <p><strong>Indicado para:</strong> acné activo, comedones, puntos negros, rosácea y pieles propensas a inflamación.</p>
+                                <br>
+                                <p><strong>Incluye:</strong> diagnóstico completo, tratamiento personalizado, pautas de cuidado en casa y seguimiento personalizado.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🌸 Facial Calmante y Reparador</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Alivio y recuperación para pieles sensibles</strong><br>
+                                Fórmulas calmantes, regenerantes y antinflamatorias que reducen enrojecimiento, fortalecen la barrera cutánea, aceleran la recuperación y serenan la piel irritada. Ideal post-procedimiento o para pieles reactivas.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 50-60 minutos</p>
+                                <br>
+                                <p><strong>Componentes:</strong> extractos de caléndula, aloe vera, avena coloidal y ácido hialurónico.</p>
+                                <br>
+                                <p><strong>Recomendado para:</strong> piel post-procedimiento, rosácea, dermatitis, sensibilidad crónica y recuperación post-operatoria.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🧬 Rejuvenecimiento Facial</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Técnicas combinadas anti-edad de múltiples niveles</strong><br>
+                                Protocolos integrales que incluyen peelings químicos, mesoterapia facial, microdermoabrasión, masajes regeneradores y complementos cosméticos para mejorar firmeza, textura, elasticidad y luminosidad global del rostro.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 80-100 minutos</p>
+                                <br>
+                                <p><strong>Componentes:</strong> retinol, vitamina C, péptidos, factores de crecimiento y ácidos exfoliantes profesionales.</p>
+                                <br>
+                                <p><strong>Objetivo:</strong> reducir visiblemente arrugas, líneas de expresión, mejorar volumen perdido, restaurar un aspecto más juvenil y radiante. Resultados progresivos con sesiones cada 7-10 días.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-img-bg"><img src="corporal.png" alt="Corporal"></div>
+                    <h3 class="cards-titulos">Corporales</h3>
+                    <button class="expand-btn">▼</button>
+                </div>
+                <div class="card-content">
+                    <div class="subcards">
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💆 Masajes Relajantes</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Relajación profunda y alivio muscular integral</strong><br>
+                                Técnicas manuales terapéuticas que descontracturan la musculatura, liberan tensiones acumuladas, mejoran la circulación sanguínea and linfática, y promueven el bienestar general del organismo.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-90 minutos</p>
+                                <br>
+                                <p><strong>Técnicas incluidas:</strong> sueco, shiatsu y descontracturante según ubicación de tensiones.</p>
+                                <br>
+                                <p><strong>Ideal para:</strong> personas con tensión muscular crónica, estrés, fatiga post-laboral, contracturas cervicales y dorso-lumbares.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> reducción de estrés, mejoría del sueño, alivio del dolor muscular, mejora de la circulación y sensación de relajación profunda.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🔥 Tratamientos Reductores</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Modelado corporal y reducción localizada profesional</strong><br>
+                                Protocolos avanzados que combinan aparatología profesional (radiofrecuencia, ultrasonido, cavitación) con técnicas manuales para reducir volumen localizado, mejorar contornos y potenciar resultados estéticos.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 50-80 minutos</p>
+                                <br>
+                                <p><strong>Zonas tratables:</strong> abdomen, flancos, muslos, brazos, cartucheras y glúteos.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> reducción localizada visible, mejora de contornos, piel más tensa. Resultados óptimos con plan de 6-8 sesiones.</p>
+                                <br>
+                                <p><strong>Complementos:</strong> se recomienda acompañar con hidratación, masajes drenantes y cuidados en casa.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🧽 Exfoliación Corporal</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Piel más suave, renovada y luminosa</strong><br>
+                                Eliminación controlada y profesional de células muertas mediante técnicas físicas (microdermoabrasión, goma de caucho) o químicas (ácidos suaves) para mejorar textura, uniformidad y preparar la piel para mejores resultados en otros tratamientos.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 45-60 minutos</p>
+                                <br>
+                                <p><strong>Zonas:</strong> brazos, espalda, glúteos, muslos, pies y zonas ásperas.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> estimulación de renovación celular, mejor absorción de productos, mayor luminosidad, textura uniforme, reducción de queratosis.</p>
+                                <br>
+                                <p><strong>Seguimiento:</strong> idóneo cada 2 semanas para mantener resultados óptimos.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🛁 Envolturas Terapéuticas</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Nutrientes profundos y desintoxicación corporal</strong><br>
+                                Envolturas con ingredientes activos (algas, arcillas, aceites esenciales, minerales) que penetran profundamente en la piel para nutrirla, desintoxicarla y mejorar visiblemente su apariencia, firmeza y luminosidad.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-75 minutos</p>
+                                <br>
+                                <p><strong>Tipos de envolturas:</strong> anticeluliticas, reafirmantes, hidratantes, desintoxicantes y relajantes.</p>
+                                <br>
+                                <p><strong>Ideal para:</strong> piel deshidratada, flacidez, celulitis, estrías, recuperación post-cambios de peso y bienestar integral.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> hidratación profunda, alivio corporal, mejora de la circulación, suavidad y brillo, sensación de relajación.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💧 Drenaje Linfático</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Reducción de retención líquida y mejora circulatoria profunda</strong><br>
+                                Técnica manual suave y especializada que estimula el sistema linfático para eliminar líquidos acumulados, toxinas y mejorar la circulación. Mejora la descarga de residuos metabólicos y edemas.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 50-70 minutos</p>
+                                <br>
+                                <p><strong>Método:</strong> movimientos suaves direccionales que respetan el flujo natural del sistema linfático.</p>
+                                <br>
+                                <p><strong>Recomendado para:</strong> post-operatorio quirúrgico, post-procedimientos estéticos, edema crónico, retención de líquidos y pesadez en extremidades.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> reducción de hinchazón, descarga de líquidos, mejoría de la circulación, sensación de ligereza.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-img-bg"><img src="capilar.png" alt="Laser"></div>
+                    <h3 class="cards-titulos">Capilares</h3>
+                    <button class="expand-btn">▼</button>
+                </div>
+                <div class="card-content">
+                    <div class="subcards">
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🌱 Tratamientos para Cabello</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Fortalecimiento profundo y nutrición capilar intensiva</strong><br>
+                                Protocolos profesionales con activos concentrados (proteínas, queratina, aminoácidos, vitaminas) que penetran en la fibra capilar para reconstruir, fortalecer y mejorar visiblemente el brillo, suavidad y resistencia del cabello dañado.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-75 minutos</p>
+                                <br>
+                                <p><strong>Indicado para:</strong> cabello dañado, reseco, quemado, rebelde, opaco, débil, con puntas abiertas o post-tratamientos químicos.</p>
+                                <br>
+                                <p><strong>Incluye:</strong> diagnóstico capilar completo, tratamiento personalizado, recomendaciones domesticas y seguimiento profesional.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> cabello más fuerte, brillante, suave, maneable y resistente. Ideal aplicar cada 2-3 semanas.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>⚡ Depilación Láser</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Depilación segura, duradera y progresiva</strong><br>
+                                Tecnología láser de última generación que emite pulsos de luz controlada para destruir el folículo piloso sin afectar la piel circundante. Resultados visibles y progresivos sesión a sesión.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 20-60 minutos según zona</p>
+                                <br>
+                                <p><strong>Zonas treatable:</strong> rostro, axilas, piernas, brazos, zona íntima, abdomen y espalda.</p>
+                                <br>
+                                <p><strong>Recomendado para:</strong> cualquier tipo de piel y vello (adaptamos intensidad según melanina). Sesiones cada 4-6 semanas, plan de 6-8 sesiones para depilación semipermanente.</p>
+                                <br>
+                                <p><strong>Ventajas:</strong> resultados duraderos, sin ingrown hairs, piel más suave, económico a largo plazo comparado con depilación recurrente.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💆 Cuidados Capilares</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Rutinas profesionales y mantenimiento capilar preventivo</strong><br>
+                                Protocolos regulares de cuidado que mantienen el cuero cabelludo equilibrado, el cabello en óptimas condiciones y previenen problemas futuros. Incluye diagnóstico, limpieza profunda, masajes estimulantes y tratamientos específicos.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 45-60 minutos</p>
+                                <br>
+                                <p><strong>Indicado para:</strong> cabello normal, graso, seco, mixto, sensible o cueroa cabelludo irritable.</p>
+                                <br>
+                                <p><strong>Beneficios:</strong> menor fragilidad, mayor brillo, aumento de elasticidad, cuero cabelludo sano, prevención de caída y mantenimiento óptimo del cabello.</p>
+                                <br>
+                                <p><strong>Recomendación:</strong> realizar cada 4 semanas como mantenimiento preventivo.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🔄 Restauración del Cuero Cabelludo</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Recuperación del tejido capilar y estimulación folicular</strong><br>
+                                Procedimientos profesionales que estimulan los folículos dormidos, mejoran la circulación local, fortalecen el cuero cabelludo dañado y promueven la regeneración del cabello. Combina técnicas manuales y complementos bioactivos.</p>
+                                <br>
+                                <p><strong>Duración:</strong> 60-80 minutos</p>
+                                <br>
+                                <p><strong>Indicado para:</strong> zonas con afinamiento, pérdida de densidad localizada, cuero cabelludo dañado, estrés capilar y recuperación post-tratamientos agresivos.</p>
+                                <br>
+                                <p><strong>Plan de tratamiento:</strong> mínimo 8-10 sesiones mensuales para apreciar cambios significativos en densidad y salud.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> mayor densidad, cabello más robusto, cuero cabelludo recuperado, reducción de caída.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🧪 Tratamientos Anticaída</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Terapias integrales para mejorar densidad y detener caída</strong><br>
+                                Protocolos médicos y cosméticos especializados que abordan las causas de la caída (estrés, nutrición, hormonas, estrés oxidativo) con tratamientos que fortalecen el folículo, mejoran la circulación y recuperan la densidad progresivamente.</p>
+                                <br>
+                                <p><strong>Duración de sesión:</strong> 50-70 minutos</p>
+                                <br>
+                                <p><strong>Diagnosis previo:</strong> valoración dermatológica y tricológica para identificar causa raíz.</p>
+                                <br>
+                                <p><strong>Plan personalizado:</strong> incluye mesoterapia, laser capilar, suplementos orales recomendados y rutina doméstica específica. Mínimo 12 sesiones para apreciar cambios.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> detención de caída anómala, mayor densidad, cabello más fuerte, recuperación del ciclo capilar normal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-img-bg"><img src="antesdespues.png" alt="Micropigmentacion"></div>
+                    <h3 class="cards-titulos">Micropigmentación</h3>
+                    <button class="expand-btn">▼</button>
+                </div>
+                <div class="card-content">
+                    <div class="subcards">
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🎯 Diseño de cejas</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Diseños personalizados</strong><br>
+                                Diseños según forma del rostro, tono y preferencias para resaltar la mirada de forma natural.</p>
+                                <p><strong>Ideal para:</strong> mejorar simetría y densidad aparente de las cejas.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💋 Micropigmentación labial</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Definición y coloración naturel</strong><br>
+                                Técnica para mejorar contorno y color de labios con resultados sutiles y duraderos.</p>
+                                <br>
+                                <p><strong>Resultados:</strong> labios con mayor definición y apariencia más saludable.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🧑‍🦲 Micropigmentación capilar</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Soluciones para pérdida de densidad</strong><br>
+                                Técnicas que simulan mayor densidad capilar para camuflar zonas con poco cabello.</p>
+                                <br>
+                                <p><strong>Recomendado para:</strong> afinamiento, cicatrices o alopecias localizadas.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🔧 Corrección de cicatrices</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Camuflaje profesional</strong><br>
+                                Técnicas para disimular cicatrices y mejorar uniformidad de la piel con pigmentos compatibles.</p>
+                                <br>
+                                <p><strong>Objetivo:</strong> mejorar apariencia y confianza del paciente.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🖊 Microblading</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>Técnica pelo a pelo</strong><br>
+                                Acabado natural y preciso para cejas con efectos inmediatos y durabilidad según cuidados.</p>
+                                <br>
+                                <p><strong>Cuidados:</strong> seguimiento y retoques según recomendación profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-img-bg"><img src="medicina.png" alt="Medicina estetica"></div>
+                    <h3 class="cards-titulos">Medicina estética</h3>
+                    <button class="expand-btn">▼</button>
+                </div>
+                <div class="card-content">
+                    <div class="subcards">
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🌟 TRATAMIENTOS ESTRELLA</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>💉 Botox Full Face</strong><br>
+                                Rejuvenecimiento integral del rostro que suaviza líneas de expresión, mejora la simetría facial y brinda una apariencia fresca y descansada.</p>
+                                    <br>
+                                <p><strong>💧 Rellenos con Ácido Hialurónico</strong><br>
+                                Restaura volúmenes, define contornos y mejora la hidratación profunda de la piel con resultados armónicos y naturales.</p>
+                                    <br>
+                                <p><strong>👃 Rinomodelación sin Cirugía</strong><br>
+                                Corrección no quirúrgica de imperfecciones nasales para mejorar el perfil facial con resultados inmediatos y sin tiempos prolongados de recuperación.</p>
+                                    <br>
+                                <p><strong>🧬 Bioestimuladores de Colágeno</strong><br>
+                                Tratamientos que estimulan la producción natural de colágeno, mejorando firmeza, textura y calidad de la piel de forma progresiva.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💉 TOXINA BOTULÍNICA (BOTOX)</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>✨ Baby Botox / Botox Preventivo</strong><br>
+                                Previene y suaviza líneas de expresión manteniendo la naturalidad del rostro.</p>
+                                    <br>
+                                <p><strong>💉 Botox Full Face</strong><br>
+                                Tratamiento completo para rejuvenecer el rostro sin perder expresión.</p>
+                                    <br>
+                                <p><strong>😬 Botox para Bruxismo</strong><br>
+                                Relaja el músculo masetero, reduce el dolor mandibular y mejora el contorno facial.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>💧 ÁCIDO HIALURÓNICO</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>💎 Rellenos Faciales</strong><br>
+                                Ideal para labios, surcos, pómulos, mentón y ojeras. Aporta volumen, definición e hidratación.</p>
+                                    <br>
+                                <p><strong>👃 Rinomodelación</strong><br>
+                                Mejora la forma de la nariz sin cirugía ni anestesia general.</p>
+                                    <br>
+                                <p><strong>🔗 Puntos de Anclaje Facial</strong><br>
+                                Técnica avanzada que redefine el óvalo facial y mejora la flacidez mediante soporte estructural.</p>
+                            </div>
+                        </div>
+
+                        <div class="subcard">
+                            <div class="subcard-header">
+                                <h4>🧬 BIOESTIMULACIÓN AVANZADA</h4>
+                                <button class="sub-expand-btn">▼</button>
+                            </div>
+                            <div class="subcard-content">
+                                <p><strong>🌿 Jalupro Super Hydro</strong><br>
+                                Bioestimulador premium que hidrata profundamente, mejora la textura de la piel y aporta luminosidad.</p>
+                                    <br>
+                                <p><strong>💎 Hidroxiapatita de Calcio</strong><br>
+                                Tratamiento reafirmante que estimula colágeno y mejora la flacidez con resultados duraderos y naturales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion-ubicacion">
+        <h6 id="ubicion-titulo">Donde encontrarnos</h6>
+        <div id="ubicaciones">
+            <div id="ubicanos-mapa">
+                <p>Ubicación: Avenida Alfredo Benavides 195 - Miraflores - Lima - Perú</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.826552274736!2d-77.03170829999999!3d-12.124017199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c98ed425709d%3A0x7d29fc30271fa2c1!2sEstetica%20Vytalis%20Advanced%20Beauty!5e0!3m2!1ses!2spe!4v1766179074098!5m2!1ses!2spe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div id="redes-sociales">
+                <h6 id="redes-titulo">Redes Sociales</h6>
+                <a style="    background: linear-gradient(130deg, #dd2a7b 30%, #faad4f);" class="redes-links" class="redes-links" href="https://www.instagram.com/vytalis_ab?utm_source=qr&igsh=ZjBpeW9iazhqdWlo " target="_blank"><img src="instagram.png" alt="Instagram" style>Instagram</a>
+                <a style="    background: linear-gradient(130deg, #395eef 30%, #395eef);" class="redes-links"  class="redes-links" href="https://www.facebook.com/vytalisadvancedbeauty?sfnsn=mo" target="_blank"><img src="facebook.png" alt="facebook" >facebook</a>
+                <a style="    background: linear-gradient(130deg, #00F7EF -150%, #000000 50%, #FF004F 150%);" class="redes-links" href="https://www.tiktok.com/@vytalisadvancedbeauty?_r=1&_t=ZS-91mlZeupNu0" target="_blank"><img src="tiktok.png" alt="tiktok">Tiktok</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion-informacion">
+        <h6 id="info-titulo">Informacion</h6>
+
+        <div id="quienes-somos">
+            <h7 class="inf-titulos" id="quienes-somos-titulo">¿Quienes somos?</h7>
+            <p class="inf-parrafos">
+                Somos un equipo de profesionales especializados en Estética Integral y Cosmiatria con formación académica y experiencia certificada.
+            </p>
+        </div>
+        
+        <div id="nuestra-mision">
+            <h7 class="inf-titulos" id="nuestra-mision-titulo">Nuestra misión:</h7>
+            <p class="inf-parrafos">
+                Nuestra misión es cambiar la vida de nuestros clientes haciéndolos sentir bien, primeramente consigo mismos y a su vez con el entorno que percibe esos cambios que transforman su realidad. Todo con protocolos profesionales, tecnología avanzada y productos de calidad.
+            </p>
+        </div>
+
+        <div>
+            <h7 class="inf-titulos" id="nuestra-vision-titulo">visión:</h7>
+            <p class="inf-parrafos">
+                Nuestra Visión es llegar a ser un Centro Estético conocido por la calidad de nuestros servicios, al grado de dejar una huella imborrable de Bienestar Integral en cada uno de nuestros clientes.
+            </p>
+        </div>
+
+        <div id="horario">
+            <h7 class="inf-titulos" id="horario-titulo">Horario de atención</h7>
+            <p class="fechas-horario">
+                Lunes a Sábado:<br> <br>10:00 am - 8:00 pm
+            </p>
+            <P class="fechas-horario">
+                Domingo/Feriados:<br> <br>Cerrado
+            </P>
+        </div>
+    </section>
+    <section>
+        <footer>
+            <p id="footer-texto">© 2025 Vytalis Advanced Beauty. Todos los derechos reservados.</p>
+        </footer>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

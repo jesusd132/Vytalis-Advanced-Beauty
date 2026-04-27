@@ -1,0 +1,895 @@
+/* Reset y base ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Header / navegación ---------------------------------------------------- */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto; /* logo - nav - botón */
+    grid-template-areas: "logo nav a btn";
+    align-items: center;
+    padding: 10px 40px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    justify-self: center; /* centrar la nav dentro de la columna central */
+}
+
+/* asignar áreas del grid a los elementos del header */
+header img { grid-area: logo; }
+.links { grid-area: nav; }
+#contactanos { grid-area: btn; }
+
+.links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.links a:hover {
+    color: #ad153e;
+    transform: scale(1.1);
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #ad153e;
+    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    color: #ad153e;
+}
+
+#contactanos:hover {
+    background: linear-gradient(160deg, #e97c90, #a32d4c);
+    transform: scale(1.05);
+    animation: none;
+}
+
+@keyframes escalar {
+    0%, 100% { transform: scale(1); }
+    50%     { transform: scale(1.02); }
+}
+
+/* Hero / lema ------------------------------------------------------------ */
+.lema {
+    background-image: url("inicio4.jpeg");
+    /* Forzar que la imagen llene el ancho del contenedor sin usar 'cover' */
+    background-size: cover;
+
+    /* Mover la imagen ligeramente hacia la izquierda para mejor encuadre */
+    background-position: 30% center;
+
+    /* Evita que la imagen se repita como mosaico */
+    background-repeat: no-repeat;
+
+    /* Mantener fondo fijo en escritorio */
+    background-attachment: fixed;
+
+    /* Asegura que el fondo ocupe toda la altura de la pantalla */
+    padding-bottom: 25vh;
+    padding-top: 25vh;
+    margin: 0;
+
+    /* Necesario para que el overlay posicionado absoluto se ubique dentro de este contenedor */
+    position: relative;
+}
+
+/* Overlay para oscurecer el fondo sin afectar el texto */
+.lema::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45); /* ajusta el valor (0.0 - 1.0) si quieres más/menos oscuro */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Asegurar que el texto quede por encima del overlay */
+.lema > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tipografía del lema */
+#lema-blanco{
+    font-size: 60px;
+    font-family: "playfair", serif;
+    font-weight: 800;
+    text-align: left;
+    line-height: 1.2;
+}
+
+#lema-blanco {
+    margin-left: 100px;
+    color: #ffffff;
+}
+
+#lema-letritas {
+    margin-left: 100px;
+    margin-top: 5px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* Secciones / espaciado ------------------------------------------------- */
+#seccion-servicios { scroll-margin-top: 70px; }
+#seccion-lema{ scroll-margin-top: 110px; }
+#seccion-ubicacion { scroll-margin-top: 110px; }
+#seccion-informacion { scroll-margin-top: 110px; }
+#seccion-formulario { scroll-margin-top: -30px; }
+
+/* Servicios y contenedor de cards ---------------------------------------- */
+#servicio-titulo {
+    font-family: "playfair", serif;
+    font-weight: 900;
+    color: #ad153e;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    padding-left: 30px;
+}
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 700;
+}
+
+/* Contenedor de tarjetas */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    margin: 0 10%;
+    align-items: start;
+}
+
+/* Tarjeta individual ----------------------------------------------------- */
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin: 0;
+    background-color: #f5f5f5;
+    background-clip: padding-box;
+    height: auto;
+    padding: 22px;
+    z-index: 1;
+}
+
+.card.expanded {
+    display: flex;
+    /* flex-direction: row; removido para mantener column */
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.expand-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #c41e3a;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card.expanded .expand-btn {
+    transform: rotate(180deg);
+}
+
+.card-content {
+    display: none;
+    margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 28px;
+    padding-right: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card.expanded .card-content {
+    display: block;
+}
+
+/* Subcards dentro de la card */
+.subcards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.subcard {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.subcard-header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.subcard-header h4 {
+    margin:0;
+    font-size:16px;
+    font-weight:600;
+    color: #2a2a2a;
+}
+.sub-expand-btn {
+    margin-left: auto;
+    background:none;
+    border:none;
+    font-size:16px;
+    color:#c41e3a;
+    cursor:pointer;
+    transition: transform 0.3s ease;
+}
+.subcard.subcard-expanded .sub-expand-btn {
+    transform: rotate(180deg);
+}
+.subcard-content {
+    display:none;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px solid #eee;
+    color: #2a2a2a;
+}
+.subcard.subcard-expanded .subcard-content {
+    display:block;
+}
+
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-content li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content li:last-child {
+    border-bottom: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono con fondo circular dentro de la card */
+.card-img-bg {
+    margin: 0 15px 0 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #fdacbb, #d11c4d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cards-titulos {
+    padding-top: 13px;
+    margin: 0;
+    font-size: 20px;
+    color: #2a2a2a;
+}
+
+.card img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+
+}
+
+.cards-titulos {
+    padding-top: 13px;
+    margin: 0;
+    font-size: 20px;
+}
+    #cards {
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0 12px;
+        gap: 16px;
+        width: 100%;
+    }
+    .card {
+        min-height: auto;
+        padding: 14px;
+        width: 100%;
+        align-items: center;
+    }
+    .card .cards-titulos {
+        font-size: 18px;
+        flex: 1 1 auto;
+    }
+    .card-img-bg {
+        margin-top: 0;
+    }
+
+/* Tablet: intentar dejar mapa y redes en una fila si cabe */
+@media (min-width: 481px) and (max-width: 720px) {
+    #ubicaciones {
+        flex-wrap: nowrap;
+        align-items: flex-start; 
+    }
+    #ubicanos-mapa {
+         flex: 1 1 60%;
+         max-width: none;
+          height: 320px;
+}
+    #redes-sociales {
+         width: 260px;
+    }
+}
+
+/* Móvil pequeño: stack mapa arriba y redes abajo, mapa full-width */
+@media (max-width: 480px) {
+    /* Ajustes de texto para móviles pequeños */
+    .subcard-header h4 {
+        font-size: 13px;
+    }
+    
+    .subcard-content {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .subcard-content p {
+        margin: 6px 0;
+        font-size: 12px;
+    }
+    
+    .card-content {
+        padding: 14px 12px;
+        padding-right: 16px;
+    }
+    
+    .subcard {
+        padding: 10px;
+    }
+    
+    #ubicaciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    #ubicanos-mapa {
+        width: 100%;
+        min-width: auto; 
+        max-width: 100%; 
+        height: 320px; 
+        order: 1; 
+    }
+    #redes-sociales {
+        width: 100%; 
+        order: 2; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+    #ubicanos-mapa iframe {
+        height: 100%; 
+    }
+}
+
+/* Ubicación */
+#seccion-ubicacion {
+    padding: 60px;
+    background-color: #fafafa;
+}
+#ubicion-titulo {
+    font-family: "playfair", serif;
+    font-weight: 900;
+    color: #ad153e;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+#ubicaciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#ubicanos-mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 450px; /* flexible: crece si hay espacio */
+    max-width: 720px;
+    min-width: 260px;
+    height: 360px;
+    background-color: #ececec;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    padding: 12px;
+}
+
+#ubicanos-mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    border-radius: inherit;
+}
+#redes-titulo-blanco {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: #ad153e;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    font-size: 23px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+#redes-titulo {
+    font-size: 16px;
+}
+#redes-sociales {
+    text-align: center;
+    font-family: "exo 2", sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.redes-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    color: #ffffff;
+    box-shadow: #0000001a 0px 4px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 9px;
+    width: 260px; /* ancho fijo para evitar que el cambio de padding mueva a los otros enlaces */
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform, box-shadow;
+}
+
+.redes-links:hover,
+.redes-links:focus {
+    transform: translateX(6px); /* mueve solo el elemento sin reflow */
+    box-shadow: #00000033 0px 6px 12px;
+}
+
+/* .redes-links img permanece igual */
+.redes-links img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/* Tipos para títulos y párrafos de la sección Información */
+#info-titulo {
+    font-family: "playfair", serif;
+    font-weight: 900;
+    color: #ad153e;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    padding-left: 30px;
+}
+.inf-titulos {
+    font-family: "playfair", serif;
+    font-weight: 900;
+    color: #000000;
+    display: block;
+    font-size: 24px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+}
+
+.inf-parrafos {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #333333;
+    display: block;
+    font-size: 18px; /* cómodo en escritorio */
+    margin-bottom: 20px;
+    padding-left: 20px;
+    max-width: 760px; /* limitar la longitud de línea para mejor lectura */
+    line-height: 1.7;
+}
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+#seccion-informacion {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ffffff;
+    margin: 0 20%;
+}
+.inf-titulos {
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.inf-parrafos {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #333333;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    font-size: 13px;
+    padding-left: 3px;
+    margin-bottom: 25px;
+    padding-left: 2px;
+    padding: 20px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+#quienes-somos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+#nuestra-mision {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 25px;
+}
+#nuestra-mision-titulo {
+    text-align: right;
+}
+#horario {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 20px;
+}
+#horario-titulo {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+}
+.fechas-horario {
+    width: 70%;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333333;
+    background-color: #f5f5f5f5;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+#whatsapp {
+    font-family: exo 2, sans-serif;
+    background: linear-gradient(130deg, #03a12b 10%, #61b665, #9bd4ac);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    color: #ffffff;
+    box-shadow: #0000001a 0px 4px 8px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 9px;
+    width: 230px; /* ancho fijo para evitar que el cambio de padding mueva a los otros enlaces */
+    height: 50px;
+}
+#whatsapp img {
+    width: 35px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+#whatsapp:hover {
+    background: linear-gradient(130deg, #16c041 10%, #71d476, #d0e4d6);
+    transform: scale(1.05);
+}
+#whatsapp {
+    cursor: pointer;
+}
+#footer-texto {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    background-color: #333333;
+    color: #8f8f8f;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+
+/* Mobile - diseño responsive 320px a 720px --------------------------------------------- */
+@media (max-width: 720px) {
+    /* Cards */
+    /* .card.expanded { flex-direction: column; } removido ya que es por defecto */
+
+    /* Layout general de secciones */
+    #seccion-informacion {
+        margin: 0 5%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    /* Header */
+    header {
+        padding: 8px 16px;
+        grid-template-columns: auto 1fr auto; /* mantener estructura pero nav oculta */
+    }
+    header img {
+        width: 100px;
+        height: auto;
+    }
+    .links {
+        display: none; /* eliminar links del header en móvil */
+    }
+    /* Ajustes para botón WhatsApp en móvil: pegado a la derecha */
+    #whatsapp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 14px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        border-radius: 9px;
+        width: auto;
+        max-width: 320px;
+        height: 48px;
+        margin: 12px 10px 12px auto; /* empuja a la derecha */
+        box-shadow: #0000001a 0px 4px 8px;
+        background: linear-gradient(130deg, #03a12b 10%, #61b665, #9bd4ac);
+    }
+    #whatsapp img {
+        width: 28px;
+        height: auto;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+    /* Hero / lema reducido */
+    .lema {
+        background-size: cover;
+        min-height: 75vh;
+        padding-top: 240px;
+        padding-bottom: 30px;
+        /* Mover un poco a la izquierda en pantallas pequeñas y no usar fixed para evitar problemas */
+        background-position: 20% center;
+        background-attachment: scroll;
+    }
+    #lema-blanco,
+    #lema-morado {
+        font-size: 28px;
+        margin-left: 20px;
+    }
+    #lema-letritas {
+        margin-left: 20px;
+        font-size: 13px;
+        max-width: calc(100% - 40px);
+    }
+    #servicio-titulo-blanco {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+    #ubicacion-titulo {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    /* Cards - apiladas y con separación lateral */
+    #cards {
+        margin: 0;
+        gap: 12px;
+        padding: 0 12px; /* espacio desde los bordes del viewport */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    /* Reducir padding global de servicios en móvil para control total */
+    .servicios {
+        padding: 0;
+    }
+    #servicio-titulo {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+    .cards-titulos {
+        font-size: 20px;
+        color: #2a2a2a;
+    }
+    
+    .card {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+        margin: 0; /* sin márgenes laterales que provoquen overflow */
+        padding: 14px 16px;
+        border-radius: 10px; /* restaurar esquinas redondeadas */
+        box-shadow: 0 4px 8px #0000001a; /* restaurar sombra */
+        min-height: auto;
+    }
+    .card-img-bg {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    .card img {
+         width: 40px;
+
+        }
+    
+    /* Ajustes de texto para tratamientos en móvil */
+    .subcard-header h4 {
+        font-size: 14px;
+    }
+    
+    .subcard-content {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .subcard-content p {
+        margin: 8px 0;
+        font-size: 13px;
+    }
+    
+    .subcard-content strong {
+        font-weight: 600;
+    }
+    
+    .subcard-content br {
+        line-height: 0.5;
+    }
+    
+    .card-content {
+        padding: 16px;
+        padding-right: 20px;
+    }
+
+    /* Ubicación */
+    #ubicion-titulo {
+        font-size: 25px;
+        padding-left: 0px;
+    }
+    #ubicaciones {
+         gap: 20px; padding: 20px;
+    }
+
+    #ubicanos-mapa {
+        font-size: 13px;
+         width: 100px; height: 220px;
+    }
+
+    #ubicanos-mapa iframe {
+        width: 100%;
+        height: 100%;
+    }
+    #redes-titulo {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    /* Información y horario */
+    #info-titulo {
+        font-size: 25px;
+        padding-left: 0px;
+    }
+    .inf-parrafos {
+        max-width: 100%;
+        padding: 16px;
+        font-size: 15px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+    .fechas-horario {
+        max-width: 100%;
+        width: 100%;
+
+    }
+    #horario {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    #horario-titulo {
+        margin-bottom: 10px;
+        font-size: 35px;
+    
+    
+    }
+}
