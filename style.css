@@ -741,7 +741,7 @@ header img { grid-area: logo; }
     .lema {
         background-size: cover;
         min-height: 75vh;
-        padding-top: 240px;
+        padding-top: 210px;
         padding-bottom: 30px;
         /* Mover un poco a la izquierda en pantallas pequeñas y no usar fixed para evitar problemas */
         background-position: 20% center;
